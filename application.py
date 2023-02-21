@@ -1,8 +1,13 @@
 from flask import Flask
 
 application = Flask(__name__)
-app = application
-@app.route("/")
+@application.route("/")
 def hello_world():
     return "<p>Hello, World!</p>"
-app.run(host='0.0.0.0', port=8000)
+
+# run the app.
+if __name__ == "__main__":
+    # Setting debug to True enables debug output. This line should be
+    # removed before deploying a production app.
+    application.run(port=8000)
+
